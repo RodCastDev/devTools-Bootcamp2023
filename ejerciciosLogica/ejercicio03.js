@@ -1,0 +1,51 @@
+// Ejercicio #3
+
+// Contador de existencias
+// Dado un array de nombres, tu objetivo es crear una función que cuente cuántas veces
+// se repite cada nombre y los represente con asteriscos (*).
+// Debes implementar la función countNameRepetitions(names), que tomará como
+// parámetro un array de nombres y devolverá un objeto con los nombres y su
+// representación de asteriscos correspondiente.
+// Ejemplo:
+// const nombres = ['Juan'
+// ,
+// 'María'
+// ,
+// 'Pedro'
+// ,
+// 'Juan'
+// ,
+// 'María'
+// ,
+// 'María'];
+
+// Llamada a la función
+// const resultado = countNameRepetitions(nombres);
+
+/// Resultado esperado
+// Juan: '**',
+// María: '***',
+/// Pedro: '*'
+
+// En el ejemplo anterior, se tiene un array de nombres donde 'Juan' se repite dos veces,
+// 'María' se repite tres veces y 'Pedro' se repite una vez.
+// La función countNameRepetitions debe imprimir los nombres y su representación de
+// asteriscos correspondiente.
+
+// Recuerda que cada vez que un nombre se repite, se debe agregar un asterisco
+// adicional al valor asociado al nombre en el objeto de resultado.
+
+function countNameRepetitions(names){
+    const ArrNombres = {};
+
+    for (let n = 0; n < names.length; n++) {    
+        const nombre = names[n];
+            if (ArrNombres[nombre]){
+                ArrNombres[nombre] += '*';
+            }else{
+                ArrNombres[nombre] = '*';
+            }        
+    }
+    console.log(ArrNombres)
+}
+countNameRepetitions(['Ricardo','Ricardo','Lorena','Emigdio','Ignacio','Emigdio','Ricardo','Lorena'])
